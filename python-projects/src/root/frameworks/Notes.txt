@@ -1,0 +1,102 @@
+min, max, sum
+len
+iter, enumerate
+sorted, reversed
+zip, izip
+any, all
+----------------------
+empty tuple 
+a=()
+single tuple
+a=(1,) #(1) is treated as an expression by python
+a=[1,2,3,4,5,6,7,8,9,10]
+a[:3] = 100,200,300,400,500 #slice on the lhs
+adding/concatenation or repetation of lists
+a + [1,2,3]
+a.append() # appending an element to the end of the list
+negative indexes work on 'sequences' string is a sequence. It can refer as the
+last element, seconf=d last element
+a[-1]
+
+a.insert()
+list is a vector in python
+a.remove(), a.pop()
+
+del can be used with slices, advantage and does not return a value.
+but does not work on deque
+del a[:5]
+
+a.extend - adds all the iterable objects to the current list
++= is a shorthand for extend method
+a.sort - does in place sorting, and does not return
+sorted method will create a news list
+
+a.reverse
+__cmp__ is the comparator in an object
+reversed() returns an iterator which goes backwards
+
+tuple and deque do not have reverse methods
+tuple is immutable, it has only 2 methods count and index
+
+set is an unordered collection, each elem must be a hashable object.
+Uses curly braces for definition
+a = {1,2,3,4}
+a = set([1,2,3,4,5])
+elements in a set cannot repeat
+
+set add, remove
+
+Type "copyright", "credits" or "license()" for more information.
+>>> a=[1,23,3]
+>>> c=[1,3,4,5,6]
+>>> set(a).issubset(c)
+False
+>>> set(c).issubset(a)
+False
+>>> set(c)-set(a)
+set([4, 5, 6])
+>>> set(c) & set(a)
+set([1, 3])
+>>> set(c) | set(a)
+set([1, 3, 4, 5, 6, 23])
+>>> f = frozenset(a)
+>>> f
+frozenset([1, 3, 23])
+>>> 
+empty set
+s = set()
+
+###Dictionaries - are made up of sets, keys should be hashable
+>>> info = {"Age":12,"name":"John", "city":"London"}
+unlike sets, dictionary is iterable
+empty dictionary, s ={}
+info.get('keyname', 'return value') for default
+info = dict(name="John", age="45", city="Mumbai") keys should be starting with alphas
+#creating dict from a tuple set
+names=('a','b','c')
+ages=(11,22,33)
+d = dict(zip(names,ages))
+for v in info.itervalues(): print v
+viewitems/view is concurrency safe in dictionaries
+
+python -m pdb <name>.py
+help,list,n (step over-next), globals() - lists all the global names defined
+globals.keys()
+type the name of variable to see its location
+print <variablename>
+l,n - next
+s-step into
+locals() - list the local variables, locals.keys()
+bt - backtrace/stacktrace, which function called what
+
+debuggers - pdb, jdb, gdb
+
+#setting breakpoints
+l for list next 10 lines
+b set breakpoints b 37 (line 37)
+b line_number or b functionname
+removing breakpoint - disable <b_number> or clear <b_number>
+control c to get back from program execution
+b - lists the breakpoints
+
+condition 3 cmd == 'exit'
